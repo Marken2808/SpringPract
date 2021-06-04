@@ -1,7 +1,7 @@
-package com.tolo.bookstoremanagement.Controller;
+package com.home.bookstore.controller;
 
-import com.tolo.bookstoremanagement.model.Person;
-import com.tolo.bookstoremanagement.service.PersonService;
+import com.home.bookstore.model.Person;
+import com.home.bookstore.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

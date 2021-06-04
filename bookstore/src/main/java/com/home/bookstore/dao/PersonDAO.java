@@ -1,6 +1,7 @@
-package com.tolo.bookstoremanagement.dao;
+package com.home.bookstore.dao;
 
-import com.tolo.bookstoremanagement.model.Person;
+
+import com.home.bookstore.model.Person;
 
 import java.util.List;
 import java.util.Optional;

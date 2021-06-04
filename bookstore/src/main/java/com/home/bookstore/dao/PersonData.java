@@ -1,6 +1,6 @@
-package com.tolo.bookstoremanagement.dao;
+package com.home.bookstore.dao;
 
-import com.tolo.bookstoremanagement.model.Person;
+import com.home.bookstore.model.Person;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

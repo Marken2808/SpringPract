@@ -1,7 +1,7 @@
-package com.tolo.bookstoremanagement.service;
+package com.home.bookstore.service;
 
-import com.tolo.bookstoremanagement.dao.PersonDAO;
-import com.tolo.bookstoremanagement.model.Person;
+import com.home.bookstore.dao.PersonDAO;
+import com.home.bookstore.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
