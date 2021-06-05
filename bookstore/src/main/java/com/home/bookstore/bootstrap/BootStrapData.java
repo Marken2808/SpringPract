@@ -3,10 +3,12 @@ package com.home.bookstore.bootstrap;
 import com.home.bookstore.model.Author;
 import com.home.bookstore.model.Book;
 import com.home.bookstore.model.Publisher;
+import com.home.bookstore.model.User;
 import com.home.bookstore.repositories.AuthorRepository;
 import com.home.bookstore.repositories.BookRepository;
 
 import com.home.bookstore.repositories.PublisherRepository;
+import com.home.bookstore.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +18,13 @@ public class BootStrapData implements CommandLineRunner {
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
+    private final UserRepository userRepository;
 
-    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
+    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository, UserRepository userRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -57,10 +61,14 @@ public class BootStrapData implements CommandLineRunner {
         bookRepository.save(book2);
         publisherRepository.save(publisher);
 
+        //--------------------------
+
+        User admin = new User("admin","$2a$10$bN7OWEvi6rTqJEYbZfDOg.FHmG.xPTDxJR1k9LzsR4O6Nt8zuIKwq",true);
+        userRepository.save(admin);
 
         System.out.println("No. Books: " + bookRepository.count());
-
         System.out.println("Publishers Book: " + publisher.getBooks().size());
+        System.out.println("No. Users: " + userRepository.count());
 
     }
 }

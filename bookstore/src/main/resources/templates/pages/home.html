@@ -6,22 +6,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-<h1>Author List</h1>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-    </tr>
+<h1>Home</h1>
 
-    <tr th:each="author : ${authors}">
-        <th th:text="${author.id}"></th>
-        <th th:text="${author.firstName}"></th>
-        <th th:text="${author.lastName}"></th>
-    </tr>
-
-</table>
 
 </body>
 </html>
