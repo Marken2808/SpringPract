@@ -4,22 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54ac6abf-a669-47c6-a25d-67c64ae7e19c" name="Default Changelist" comment="" />
+    <list default="true" id="54ac6abf-a669-47c6-a25d-67c64ae7e19c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/bootstrap/BootStrapData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/bootstrap/BootStrapData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/bootstrap/BootStrapData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/bootstrap/BootStrapData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/HomeController.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1tbCFR8z3VS2aGMhUlnL7ObTKSj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -30,9 +51,34 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.BookstoreApplication">
+    <configuration name="PassGen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.home.bookstore.PassGen" />
+      <module name="bookstore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.home.bookstore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bookstore" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.home.bookstore.BookstoreApplication" />
@@ -40,6 +86,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PassGen" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -52,6 +103,8 @@
       <workItem from="1623028299077" duration="185000" />
       <workItem from="1623028727195" duration="96000" />
       <workItem from="1623028827040" duration="64000" />
+      <workItem from="1623028894185" duration="67000" />
+      <workItem from="1623064410313" duration="5372000" />
     </task>
     <servers />
   </component>

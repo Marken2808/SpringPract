@@ -64,7 +64,11 @@ public class BootStrapData implements CommandLineRunner {
         //--------------------------
 
         User admin = new User("admin","$2a$10$bN7OWEvi6rTqJEYbZfDOg.FHmG.xPTDxJR1k9LzsR4O6Nt8zuIKwq",true);
+        User zxc = new User("zxc","$2a$10$o.YnxFEK0yGalXn2MjkgUuWhEEQMeRLdO4zMSWAMsajHv3gLqZSIq",true);
+        User tuan = new User("tuan","$2a$10$CuftvJ7q2YoNOXVZHZ/LaeKFtpdKkUhcQoRHJdmM4g5ltkqONtUA.",true);
         userRepository.save(admin);
+        userRepository.save(zxc);
+        userRepository.save(tuan);
 
         System.out.println("No. Books: " + bookRepository.count());
         System.out.println("Publishers Book: " + publisher.getBooks().size());
