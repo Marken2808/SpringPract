@@ -42,7 +42,7 @@ public class AuthorController {
     public ModelAndView EditAuthor(@PathVariable(name = "id") Long id){
         ModelAndView mav = new ModelAndView("id");
         Author author = authorService.get(id);
-        mav.addObject("authors", author);
+        mav.addObject("author", author);
         return mav;
     }
 

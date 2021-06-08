@@ -38,21 +38,21 @@ public class BookController {
     @RequestMapping(value = "saveBook", method = RequestMethod.POST)
     public String saveBook(@ModelAttribute("book") Book book) {
         bookService.save(book);
-        return "redirect:/";
+        return "redirect:/books";
     }
 
     @RequestMapping("editBook/{id}")
     public ModelAndView EditBook(@PathVariable (name = "id") Long id){
-        ModelAndView mav = new ModelAndView("editBook");
+        ModelAndView mav = new ModelAndView("id");
         Book book = bookService.get(id);
-        mav.addObject("books", book);
+        mav.addObject("book", book);
         return mav;
     }
 
     @RequestMapping("deleteBook/{id}")
     public String DeleteBook(@PathVariable (name = "id") Long id){
         bookService.delete(id);
-        return "redirect:/";
+        return "redirect:/books";
     }
 
 }

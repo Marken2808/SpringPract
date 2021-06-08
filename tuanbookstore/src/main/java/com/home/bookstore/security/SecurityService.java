@@ -1,4 +1,4 @@
-package com.home.bookstore.service;
+package com.home.bookstore.security;
 
 import com.home.bookstore.model.User;
 import com.home.bookstore.repositories.UserRepository;
@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-public class UserSecurityService implements UserDetailsService {
+public class SecurityService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;

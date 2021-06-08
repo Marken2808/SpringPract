@@ -10,16 +10,20 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/AuthorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/AuthorRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/PublisherRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/PublisherRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authors/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authors/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/service/UserSecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/security/SecurityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authors/newAuthor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authors/newAuthor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/config/WebSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/AuthorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/AuthorController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/BookController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/service/UserSecurityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/authors/newAuthor.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/authors/newAuthor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,15 +78,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,6 +116,7 @@
       <workItem from="1623028894185" duration="67000" />
       <workItem from="1623064410313" duration="5372000" />
       <workItem from="1623103302772" duration="10277000" />
+      <workItem from="1623150336954" duration="5603000" />
     </task>
     <servers />
   </component>

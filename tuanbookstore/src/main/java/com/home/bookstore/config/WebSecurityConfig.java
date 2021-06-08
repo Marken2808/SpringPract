@@ -1,6 +1,6 @@
 package com.home.bookstore.config;
 
-import com.home.bookstore.service.UserSecurityService;
+import com.home.bookstore.security.SecurityService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.web.servlet.HttpSecurityDsl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -19,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return new UserSecurityService();
+        return new SecurityService();
     }
 
     @Bean
