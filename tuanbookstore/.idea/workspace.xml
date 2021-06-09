@@ -6,24 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="54ac6abf-a669-47c6-a25d-67c64ae7e19c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/AuthorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/AuthorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/BookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/service/UserSecurityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/security/SecurityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authors/newAuthor.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authors/newAuthor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/AuthorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/AuthorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/BookController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/BookController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/PageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/repositories/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/service/UserSecurityService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/authors/newAuthor.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/authors/newAuthor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/navigation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,17 +65,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BookstoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bookstore" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.home.bookstore.BookstoreApplication" />
@@ -116,7 +92,8 @@
       <workItem from="1623028894185" duration="67000" />
       <workItem from="1623064410313" duration="5372000" />
       <workItem from="1623103302772" duration="10277000" />
-      <workItem from="1623150336954" duration="5603000" />
+      <workItem from="1623150336954" duration="5714000" />
+      <workItem from="1623238683700" duration="4091000" />
     </task>
     <servers />
   </component>

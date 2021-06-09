@@ -6,6 +6,7 @@ import com.home.bookstore.repositories.AuthorRepository;
 import com.home.bookstore.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +17,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    BCryptPasswordEncoder encoder;
+    private PasswordEncoder encoder;
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+        this.encoder = new BCryptPasswordEncoder();
+    }
 
     public List<User> listAll(){
         return userRepository.findAll();
@@ -32,9 +37,15 @@ public class UserService {
     }
 
     public void save(User user) {
+        System.out.println("bf: "+user.getPassword());
         user.setPassword(encoder.encode(user.getPassword()));
+        System.out.println("af: "+user.getPassword());
         user.setEnabled(true);
         userRepository.save(user);
     }
+
+//    public boolean isUserAlreadyPresent(User user){
+//        userRepository.is
+//    }
 
 }
