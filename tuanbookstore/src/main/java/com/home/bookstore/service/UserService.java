@@ -37,9 +37,9 @@ public class UserService {
     }
 
     public void save(User user) {
-        System.out.println("bf: "+user.getPassword());
+//        System.out.println("bf: "+user.getPassword());
         user.setPassword(encoder.encode(user.getPassword()));
-        System.out.println("af: "+user.getPassword());
+//        System.out.println("af: "+user.getPassword());
         user.setEnabled(true);
         userRepository.save(user);
     }

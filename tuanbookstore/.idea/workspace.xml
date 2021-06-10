@@ -6,11 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="54ac6abf-a669-47c6-a25d-67c64ae7e19c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/home/bookstore/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/home/bookstore/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/authors/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/authors/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/books/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/components/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/components/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pages/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/publishers/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/publishers/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/home/bookstore/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/home/bookstore/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/authors/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/authors/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/books/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/books/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/components/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/components/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/pages/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pages/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/publishers/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/publishers/list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -94,6 +105,9 @@
       <workItem from="1623103302772" duration="10277000" />
       <workItem from="1623150336954" duration="5714000" />
       <workItem from="1623238683700" duration="4091000" />
+      <workItem from="1623277321278" duration="120000" />
+      <workItem from="1623323796733" duration="11649000" />
+      <workItem from="1623355828315" duration="2672000" />
     </task>
     <servers />
   </component>

@@ -8,7 +8,7 @@
 <body>
 <h1>Author List</h1>
 
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>ID</th>
         <th>First Name</th>
@@ -21,8 +21,8 @@
         <td th:text="${author.firstName}"></td>
         <td th:text="${author.lastName}"></td>
         <td>
-            <a th:href="@{'/editAuthor/'+${author.id}}">Edit</a>
-            <a th:href="@{'/deleteAuthor/'+${author.id}}">Delete</a>
+            <a th:href="@{'/editAuthor/'+${author.id}}" class="btn btn-outline-info">Edit</a>
+            <a th:href="@{'/deleteAuthor/'+${author.id}}" class="btn btn-outline-danger">Delete</a>
         </td>
     </tr>
 

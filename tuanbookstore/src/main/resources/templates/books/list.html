@@ -8,7 +8,7 @@
 <body>
 <h1>Book List</h1>
 
-<table class="table">
+<table class="table table-hover">
 
     <thead>
         <tr>
@@ -26,9 +26,9 @@
             <td th:text="${book.isbn}"></td>
             <td th:text="${book.publisher.name}"></td>
             <td>
-                <a th:href="@{'/editBook/'+${book.id}}">Edit</a>
+                <a th:href="@{'/editBook/'+${book.id}}" class="btn btn-outline-info">Edit</a>
                 &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/deleteBook/'+${book.id}}">Delete</a>
+                <a th:href="@{'/deleteBook/'+${book.id}}" class="btn btn-outline-danger">Delete</a>
             </td>
         </tr>
     </tbody>

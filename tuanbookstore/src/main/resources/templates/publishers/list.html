@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -20,8 +20,8 @@
         <td th:text="${publisher.name}"></td>
         <td th:text="${publisher.address}"></td>
         <td>
-            <a th:href="@{'/editPublisher/'+${publisher.id}}">Edit</a>
-            <a th:href="@{'/deletePublisher/'+${publisher.id}}">Delete</a>
+            <a th:href="@{'/editPublisher/'+${publisher.id}}" class="btn btn-outline-info">Edit</a>
+            <a th:href="@{'/deletePublisher/'+${publisher.id}}" class="btn btn-outline-danger">Delete</a>
         </td>
     </tr>
 </table>
