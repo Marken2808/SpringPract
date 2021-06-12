@@ -42,7 +42,7 @@ public class BookController {
     }
 
     @RequestMapping("editBook/{id}")
-    public ModelAndView EditBook(@PathVariable (name = "id") Long id){
+    public ModelAndView editBook(@PathVariable (name = "id") Long id){
         ModelAndView mav = new ModelAndView("id");
         Book book = bookService.get(id);
         mav.addObject("book", book);
@@ -50,7 +50,7 @@ public class BookController {
     }
 
     @RequestMapping("deleteBook/{id}")
-    public String DeleteBook(@PathVariable (name = "id") Long id){
+    public String deleteBook(@PathVariable (name = "id") Long id){
         bookService.delete(id);
         return "redirect:/books";
     }

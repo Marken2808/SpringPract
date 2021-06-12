@@ -1,6 +1,7 @@
 package com.home.bookstore.service;
 
 import com.home.bookstore.model.Author;
+import com.home.bookstore.model.Role;
 import com.home.bookstore.model.User;
 import com.home.bookstore.repositories.AuthorRepository;
 import com.home.bookstore.repositories.UserRepository;
@@ -37,9 +38,7 @@ public class UserService {
     }
 
     public void save(User user) {
-//        System.out.println("bf: "+user.getPassword());
         user.setPassword(encoder.encode(user.getPassword()));
-//        System.out.println("af: "+user.getPassword());
         user.setEnabled(true);
         userRepository.save(user);
     }

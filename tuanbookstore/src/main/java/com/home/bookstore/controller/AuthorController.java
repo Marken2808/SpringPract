@@ -39,7 +39,7 @@ public class AuthorController {
     }
 
     @RequestMapping("editAuthor/{id}")
-    public ModelAndView EditAuthor(@PathVariable(name = "id") Long id){
+    public ModelAndView editAuthor(@PathVariable(name = "id") Long id){
         ModelAndView mav = new ModelAndView("id");
         Author author = authorService.get(id);
         mav.addObject("author", author);
@@ -47,7 +47,7 @@ public class AuthorController {
     }
 
     @RequestMapping("deleteAuthor/{id}")
-    public String DeleteAuthor(@PathVariable(name = "id") Long id){
+    public String deleteAuthor(@PathVariable(name = "id") Long id){
         authorService.delete(id);
         return "redirect:/authors";
     }

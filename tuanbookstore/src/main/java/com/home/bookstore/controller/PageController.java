@@ -1,6 +1,7 @@
 package com.home.bookstore.controller;
 
 import com.home.bookstore.model.Book;
+import com.home.bookstore.model.Role;
 import com.home.bookstore.model.User;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -16,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 
-    @RequestMapping("")
+    @RequestMapping("/")
     public String HomePage(){
         return "pages/home";
     }

@@ -13,22 +13,30 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="/">Navbar</a>
+    <a class="navbar-brand" href="/">Bookstore</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
 
-      <ul class="navbar-nav me-auto align-items-center justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/books">Books</a>
+      <ul class="nav nav-pills me-auto align-items-center justify-content-center">
+          <li sec:authorize="hasAnyAuthority('ADMIN', 'EDITOR')" class="nav-item">
+            <a class="nav-link" th:href="@{/books}"
+               th:classappend="${#request.getRequestURI() == '/books' ? 'active' : ''}"
+            >Books</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/authors">Authors</a>
+          <li sec:authorize="hasAnyAuthority('ADMIN', 'EDITOR')" class="nav-item">
+            <a class="nav-link" th:href="@{/authors}"
+               th:classappend="${#request.getRequestURI() == '/authors' ? 'active' : ''}"
+            >Authors</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/publishers">Publishers</a>
+          <li sec:authorize="hasAnyAuthority('ADMIN', 'EDITOR')" class="nav-item">
+            <a class="nav-link" th:href="@{/publishers}"
+               th:classappend="${#request.getRequestURI() == '/publishers' ? 'active' : ''}"
+            >Publishers</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users">Users</a>
+          <li sec:authorize="hasAnyAuthority('ADMIN', 'EDITOR')" class="nav-item">
+            <a class="nav-link" th:href="@{/users}"
+               th:classappend="${#request.getRequestURI() == '/users' ? 'active' : ''}"
+            >Users</a>
           </li>
       </ul>
 
