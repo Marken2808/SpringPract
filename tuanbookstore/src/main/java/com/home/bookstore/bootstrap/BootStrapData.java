@@ -1,14 +1,8 @@
 package com.home.bookstore.bootstrap;
 
-import com.home.bookstore.model.Author;
-import com.home.bookstore.model.Book;
-import com.home.bookstore.model.Publisher;
-import com.home.bookstore.model.User;
-import com.home.bookstore.repositories.AuthorRepository;
-import com.home.bookstore.repositories.BookRepository;
+import com.home.bookstore.model.*;
+import com.home.bookstore.repositories.*;
 
-import com.home.bookstore.repositories.PublisherRepository;
-import com.home.bookstore.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,13 +13,16 @@ public class BootStrapData implements CommandLineRunner {
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
     private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
 
-    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository, UserRepository userRepository) {
+    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository, UserRepository userRepository, RoleRepository roleRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
         this.publisherRepository = publisherRepository;
         this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -44,7 +41,6 @@ public class BootStrapData implements CommandLineRunner {
 
         authorRepository.save(marken);
         bookRepository.save(book1);
-        publisherRepository.save(publisher);
 
         //-------------------
 
@@ -59,12 +55,29 @@ public class BootStrapData implements CommandLineRunner {
 
         authorRepository.save(linh);
         bookRepository.save(book2);
-        publisherRepository.save(publisher);
 
         //--------------------------
 
+        Role ADMIN = new Role("ADMIN");
         User admin = new User("admin","$2a$10$bN7OWEvi6rTqJEYbZfDOg.FHmG.xPTDxJR1k9LzsR4O6Nt8zuIKwq",true);
+        admin.setRole(ADMIN);
+        ADMIN.getUsers().add(admin);
+        roleRepository.save(ADMIN);
         userRepository.save(admin);
+
+        Role EDITOR = new Role("EDITOR");
+        User zxc = new User("zxc","$2a$10$o.YnxFEK0yGalXn2MjkgUuWhEEQMeRLdO4zMSWAMsajHv3gLqZSIq",true);
+        zxc.setRole(EDITOR);
+        EDITOR.getUsers().add(zxc);
+        roleRepository.save(EDITOR);
+        userRepository.save(zxc);
+
+        Role GUEST = new Role("GUEST");
+        User tuan = new User("tuan","$2a$10$CuftvJ7q2YoNOXVZHZ/LaeKFtpdKkUhcQoRHJdmM4g5ltkqONtUA.",true);
+        tuan.setRole(GUEST);
+        GUEST.getUsers().add(tuan);
+        roleRepository.save(GUEST);
+        userRepository.save(tuan);
 
         System.out.println("No. Books: " + bookRepository.count());
         System.out.println("Publishers Book: " + publisher.getBooks().size());
