@@ -2,42 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Book</title>
+    <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-<div th:replace="~{components/navigation :: navigationBar}"/>
-
 <h1>Book List</h1>
 
-<table class="table table-hover">
+<table class="table">
 
     <thead>
         <tr>
             <th>ID</th>
             <th>Title</th>
-            <th>ISBN</th>
             <th>Publisher</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr th:each="book : ${books}">
-            <td th:text="${book.id}"></td>
-            <td th:text="${book.title}"></td>
-            <td th:text="${book.isbn}"></td>
-            <td th:text="${book.publisher.name}"></td>
-            <td>
-                <a th:href="@{'/editBook/'+${book.id}}" class="btn btn-outline-info">Edit</a>
-                &nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/deleteBook/'+${book.id}}" class="btn btn-outline-danger">Delete</a>
-            </td>
-        </tr>
+    <tr th:each="book : ${books}">
+        <th th:text="${book.id}"></th>
+        <th th:text="${book.title}"></th>
+        <th th:text="${book.publisher.name}"></th>
+    </tr>
     </tbody>
 </table>
-
-<a href="/newbook">create new book</a>
-
 
 
 </body>

@@ -1,6 +1,6 @@
 package com.home.bookstore.config;
 
-import com.home.bookstore.security.SecurityService;
+import com.home.bookstore.service.UserSecurityService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.web.servlet.HttpSecurityDsl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -18,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return new SecurityService();
+        return new UserSecurityService();
     }
 
     @Bean
@@ -42,19 +43,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
-                .antMatchers("/").authenticated()
-//                .antMatchers("/new").hasAuthority("ADMIN")
+//                .antMatchers("/").hasAnyAuthority("USER","EDITOR","ADMIN")
+                .antMatchers("/new").hasAuthority("ADMIN")
                 .antMatchers("/edit/**").hasAnyAuthority("ADMIN","EDITOR")
-                .antMatchers("/delete/**").hasAnyAuthority("ADMIN","EDITOR")
-                .antMatchers("/users/**").hasAnyAuthority("ADMIN","EDITOR")
-                .antMatchers("/books/**").hasAnyAuthority("ADMIN","EDITOR")
-                .antMatchers("/authors/**").hasAnyAuthority("ADMIN","EDITOR")
-                .antMatchers("/publishers/**").hasAnyAuthority("ADMIN","EDITOR")
+                .antMatchers("/delete/**").hasAuthority("ADMIN")
                 .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/register/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").usernameParameter("username").passwordParameter("password").permitAll()
+                .formLogin().permitAll()
                 .and()
                 .logout().permitAll()
                 .and()

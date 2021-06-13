@@ -21,12 +21,9 @@ public class UserSecurity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        Set<Role> roles = user.getRoles();
+        System.out.println(user.getRole());
         List<SimpleGrantedAuthority> authorities =new ArrayList<>();
-        for (Role role: roles){
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
-        }
-
+        authorities.add(new SimpleGrantedAuthority(user.getRole().getName()));
         return authorities;
     }
 

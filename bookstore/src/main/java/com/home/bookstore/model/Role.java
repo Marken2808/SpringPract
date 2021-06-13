@@ -1,6 +1,8 @@
 package com.home.bookstore.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Role {
@@ -10,6 +12,17 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToMany (mappedBy = "role")
+    private Set<User> users = new HashSet<>();
+
+    public Role(String name) {
+        this.name = name;
+    }
+
+    public Role() {
+
+    }
 
     public Long getId() {
         return id;
@@ -25,5 +38,13 @@ public class Role {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }
