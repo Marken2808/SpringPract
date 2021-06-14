@@ -9,7 +9,7 @@
 <body>
 
     <div class="container-fluid vh-100 d-flex align-items-center justify-content-center" style="background-color: aquamarine">
-        <form th:action="@{/registeredUser}" th:object="${user}" method="post" class="d-grid gap-3" >
+        <form th:action="@{/register/test}" th:object="${user}" method="post" class="d-grid gap-3" >
             <h3 align="center"> Sign Up </h3>
             <div class="form-floating">
                 <input type="text" class="form-control" id="username" th:field="*{username}" placeholder="username">

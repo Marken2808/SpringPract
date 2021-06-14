@@ -72,6 +72,11 @@ public class BootStrapData implements CommandLineRunner {
         roleRepository.save(EDITOR);
         userRepository.save(zxc);
 
+        User qwe = new User("qwe","$2a$10$FsK85pF/8rwVoNKeM4ZJm.v8XMzTIy2BCjGXvkJkOeUKXBmaR6XYy",true);
+        qwe.setRole(EDITOR);
+        EDITOR.getUsers().add(qwe);
+        userRepository.save(qwe);
+
         Role GUEST = new Role("GUEST");
         User tuan = new User("tuan","$2a$10$CuftvJ7q2YoNOXVZHZ/LaeKFtpdKkUhcQoRHJdmM4g5ltkqONtUA.",true);
         tuan.setRole(GUEST);

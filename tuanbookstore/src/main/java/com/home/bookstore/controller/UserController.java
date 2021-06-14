@@ -29,12 +29,12 @@ public class UserController {
         return "users/list";
     }
 
-    @RequestMapping(value ="/registeredUser", method = RequestMethod.POST)
+    @RequestMapping(value ="/register/test", method = RequestMethod.POST)
     public ModelAndView saveUser(User user){
         ModelAndView mav = new ModelAndView();
         userService.save(user);
         mav.addObject("user", new User());
-        mav.setViewName("pages/login");
+        mav.setViewName("redirect:/register");
         return mav;
     }
 

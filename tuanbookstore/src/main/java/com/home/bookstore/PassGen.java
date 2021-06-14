@@ -7,8 +7,7 @@ public class PassGen {
     public static void main(String[] args){
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-        System.out.println(encoder.encode("zxc"));
-        System.out.println(encoder.encode("tuan"));
+        System.out.println(encoder.encode("qwe"));
     }
 
 }

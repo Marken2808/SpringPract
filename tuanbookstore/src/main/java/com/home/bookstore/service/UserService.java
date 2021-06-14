@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.security.Principal;
 import java.util.List;
 
 @Service
@@ -19,6 +21,7 @@ public class UserService {
     private UserRepository userRepository;
 
     private PasswordEncoder encoder;
+
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -38,13 +41,14 @@ public class UserService {
     }
 
     public void save(User user) {
+        user.setRole(new Role("GUEST"));
         user.setPassword(encoder.encode(user.getPassword()));
         user.setEnabled(true);
         userRepository.save(user);
     }
 
-//    public boolean isUserAlreadyPresent(User user){
-//        userRepository.is
-//    }
+    private User getLoggedInUser(Principal principal) {
+        return userRepository.getUserByUsername(principal.getName());
+    }
 
 }
