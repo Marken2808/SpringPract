@@ -13,21 +13,21 @@ import static org.apache.http.entity.ContentType.*;
 
 
 @Service
-public class UserProfileService {
+public class ProfileService {
 
-    private final UserProfileRepository userProfileRepository;
+    private final ProfileRepository profileRepository;
     private final FileStore fileStore;
     @Autowired
-    public UserProfileService(UserProfileRepository userProfileRepository, FileStore fileStore) {
-        this.userProfileRepository = userProfileRepository;
+    public ProfileService(ProfileRepository profileRepository, FileStore fileStore) {
+        this.profileRepository = profileRepository;
         this.fileStore = fileStore;
     }
 
-    List<UserProfile> getUserProfiles() {
-        return userProfileRepository.getUserProfiles();
+    List<Profile> getProfiles() {
+        return profileRepository.getProfiles();
     }
 
-    public void uploadImage(UUID userProfileId, MultipartFile file) {
+    public void uploadImage(UUID profileId, MultipartFile file) {
         // Check if empty
         extracted(file);
 
@@ -35,19 +35,19 @@ public class UserProfileService {
         extracted1(file);
 
         // User exists in DB
-        UserProfile user = getUserProfileOrThrow(userProfileId);
+        Profile profile = getProfileOrThrow(profileId);
         // grab metadata from file if any
         Map<String, String> metadata = new HashMap<>();
         metadata.put("Content-type", file.getContentType());
         metadata.put("Content-length", String.valueOf(file.getSize()));
 
         // Store in AWS s3, update database with s3 link
-        String path = String.format("%s/%s", BucketName.PROFILE.getBucketName(), user.getUserProfileId());
+        String path = String.format("%s/%s", BucketName.PROFILE.getBucketName(), profile.getProfileId());
         String filename = String.format("%s-%s", file.getOriginalFilename(), UUID.randomUUID());
 
         try {
             fileStore.save(path, filename, file.getInputStream(),Optional.of(metadata));
-            user.setUserProfileImgUrl(filename);
+            profile.setProfileAvatar(filename);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -69,22 +69,22 @@ public class UserProfileService {
         }
     }
 
-    private UserProfile getUserProfileOrThrow(UUID userProfileId) {
-        return userProfileRepository
-                .getUserProfiles()
+    private Profile getProfileOrThrow(UUID profileId) {
+        return profileRepository
+                .getProfiles()
                 .stream()
-                .filter(userProfile -> userProfile.getUserProfileId().equals(userProfileId))
+                .filter(profile -> profile.getProfileId().equals(profileId))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(String.format("User profile $s not found", userProfileId)));
+                .orElseThrow(() -> new IllegalStateException(String.format("User profile $s not found", profileId)));
     }
 
     public byte[] downloadImage(UUID userProfileId) {
-        UserProfile user = getUserProfileOrThrow(userProfileId);
+        Profile user = getProfileOrThrow(userProfileId);
         String path = String.format("%s/%s",
                 BucketName.PROFILE.getBucketName(),
-                user.getUserProfileId());
+                user.getProfileId());
 
-        return user.getUserProfileImgUrl()
+        return user.getProfileAvatar()
                 .map(key -> fileStore.dowload(path, key))
                 .orElse(new byte[0]);
 
