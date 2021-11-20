@@ -15,17 +15,28 @@ import static org.apache.http.entity.ContentType.*;
 @Service
 public class ProfileService {
 
+
     private final ProfileRepository profileRepository;
     private final FileStore fileStore;
+
     @Autowired
     public ProfileService(ProfileRepository profileRepository, FileStore fileStore) {
         this.profileRepository = profileRepository;
         this.fileStore = fileStore;
     }
 
-    List<Profile> getProfiles() {
-        return profileRepository.getProfiles();
+//    List<Profile> getProfiles() {
+//        return profileRepository.getProfiles();
+//    }
+
+    public List<Profile> findAll() {
+        return profileRepository.findAll();
     }
+
+    public void save(Profile profile){
+        profileRepository.save(profile);
+    }
+
 
     public void uploadImage(UUID profileId, MultipartFile file) {
         // Check if empty
@@ -48,6 +59,9 @@ public class ProfileService {
         try {
             fileStore.save(path, filename, file.getInputStream(),Optional.of(metadata));
             profile.setProfileAvatar(filename);
+            save(profile);
+
+
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -70,8 +84,7 @@ public class ProfileService {
     }
 
     private Profile getProfileOrThrow(UUID profileId) {
-        return profileRepository
-                .getProfiles()
+        return findAll()
                 .stream()
                 .filter(profile -> profile.getProfileId().equals(profileId))
                 .findFirst()
@@ -79,14 +92,15 @@ public class ProfileService {
     }
 
     public byte[] downloadImage(UUID userProfileId) {
+
         Profile user = getProfileOrThrow(userProfileId);
         String path = String.format("%s/%s",
                 BucketName.PROFILE.getBucketName(),
                 user.getProfileId());
 
-        return user.getProfileAvatar()
-                .map(key -> fileStore.dowload(path, key))
-                .orElse(new byte[0]);
 
+        return user.getProfileAvatar()
+                .map(key -> fileStore.download(path, key))
+                .orElse(new byte[0]);
     }
 }

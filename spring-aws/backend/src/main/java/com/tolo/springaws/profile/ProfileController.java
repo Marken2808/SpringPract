@@ -13,6 +13,7 @@ import java.util.UUID;
 @CrossOrigin("*")
 public class ProfileController {
 
+
     private ProfileService profileService;
 
     @Autowired
@@ -20,9 +21,14 @@ public class ProfileController {
         this.profileService = profileService;
     }
 
+//    @GetMapping
+//    public List<Profile> getProfiles() {
+//        return profileService.getProfiles();
+//    }
+
     @GetMapping
     public List<Profile> getProfiles() {
-        return profileService.getProfiles();
+        return profileService.findAll();
     }
 
     @PostMapping(

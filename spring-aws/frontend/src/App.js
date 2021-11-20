@@ -4,46 +4,46 @@ import './App.css';
 import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
 
-const UserProfiles = () => {
+const Profiles = () => {
 
-  const [UserProfiles, setUserProfiles] = useState([]);
+  const [Profiles, setProfiles] = useState([]);
 
-  const fetchUserProfiles = () => {
-    axios.get("http://localhost:8080/api/v1/user-profile").then(res => {
+  const fetchProfiles = () => {
+    axios.get("http://localhost:8080/api/v1/profile").then(res => {
       console.log(res);
-      setUserProfiles(res.data)
+      setProfiles(res.data)
     });
   }
 
   useEffect(() => {
-    fetchUserProfiles();
+    fetchProfiles();
   }, []);
 
-  return UserProfiles.map((userProfile, index) => {
+  return Profiles.map((profile, index) => {
     return (
       <div key={index}>
-        {userProfile.userProfileId ? (
-          <img className="image" src={`http://localhost:8080/api/v1/user-profile/${userProfile.userProfileId}/image/download`} />
+        {profile.profileId ? (
+          <img className="image" src={`http://localhost:8080/api/v1/profile/${profile.profileId}/image/download`} />
         ) : null}
         <br/>
         <br/>
-        <Dropzone {...userProfile}/>
-        <h1>{userProfile.username}</h1>
-        <p>{userProfile.userProfileId}</p>
+        <Dropzone {...profile}/>
+        <h1>{profile.profileName}</h1>
+        <p>{profile.profileId}</p>
      
       </div>
     )
   })
 }
 
-function Dropzone({userProfileId}) {
+function Dropzone({profileId}) {
   const onDrop = useCallback(acceptedFiles => {
     const file = acceptedFiles[0];
     console.log(file);
     const formData = new FormData();
 
     formData.append("file", file);
-    axios.post(`http://localhost:8080/api/v1/user-profile/${userProfileId}/image/upload`,
+    axios.post(`http://localhost:8080/api/v1/profile/${profileId}/image/upload`,
       formData,
       {
         headers: {
@@ -74,7 +74,7 @@ function Dropzone({userProfileId}) {
 function App() {
   return (
     <div className="App">
-      <UserProfiles />
+      <Profiles />
     </div>
   );
 }

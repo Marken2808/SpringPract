@@ -1,5 +1,7 @@
 package com.tolo.springaws.profile;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Optional;
@@ -11,6 +13,10 @@ public class Profile {
 
     @Id
     @Column(name = "profile_id")
+    @GenericGenerator(
+        name = "UUID",
+        strategy = "org.hibernate.id.UUIDGenerator"
+    )
     private UUID profileId;
 
     @Column(name = "profile_name")
@@ -58,5 +64,14 @@ public class Profile {
     @Override
     public int hashCode() {
         return Objects.hash(profileId, profileName, profileAvatar);
+    }
+
+    @Override
+    public String toString() {
+        return "Profile{" +
+                "profileId=" + profileId +
+                ", profileName='" + profileName + '\'' +
+                ", profileAvatar='" + profileAvatar + '\'' +
+                '}';
     }
 }

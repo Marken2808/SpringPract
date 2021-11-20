@@ -40,7 +40,7 @@ public class FileStore {
         }
     }
 
-    public byte[] dowload(String path, String key) {
+    public byte[] download(String path, String key) {
         try {
             S3Object object = s3.getObject(path, key);
             return IOUtils.toByteArray(object.getObjectContent());
