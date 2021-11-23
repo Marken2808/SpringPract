@@ -31,20 +31,24 @@ public class ProfileController {
         return profileService.findAll();
     }
 
+    @GetMapping("{profileId}")
+    public Profile getProfileByName(@PathVariable("profileId") UUID profileId){
+        return profileService.getById(profileId);
+    }
+
     @PostMapping(
             path = "{profileId}/image/upload",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-
-    public void uploadImage(@PathVariable("profileId") UUID userProfileId,
+    public void uploadImage(@PathVariable("profileId") UUID profileId,
                             @RequestParam("file")MultipartFile file) {
 
-        profileService.uploadImage(userProfileId, file);
+        profileService.uploadImage(profileId, file);
     }
 
     @GetMapping("{profileId}/image/download")
-    public byte[] downloadImage(@PathVariable("profileId") UUID userProfileId) {
-        return profileService.downloadImage(userProfileId);
+    public byte[] downloadImage(@PathVariable("profileId") UUID profileId) {
+        return profileService.downloadImage(profileId);
     }
 }

@@ -15,11 +15,11 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class FileStore {
+public class AmazonFileStore {
     private final AmazonS3 s3;
 
     @Autowired
-    public FileStore(AmazonS3 s3) {
+    public AmazonFileStore(AmazonS3 s3) {
         this.s3 = s3;
     }
 

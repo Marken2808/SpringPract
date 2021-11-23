@@ -1,14 +1,14 @@
 package com.tolo.springaws.profile;
 
-import com.tolo.springaws.datastore.FakeProfileDataStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
-public interface ProfileRepository extends JpaRepository<Profile,Long>{
+public interface ProfileRepository extends JpaRepository<Profile, UUID>{
 
 //    private final FakeProfileDataStore fakeProfileDataStore;
 //

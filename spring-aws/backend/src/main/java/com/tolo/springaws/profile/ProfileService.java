@@ -1,7 +1,7 @@
 package com.tolo.springaws.profile;
 
 import com.tolo.springaws.bucket.BucketName;
-import com.tolo.springaws.filestore.FileStore;
+import com.tolo.springaws.filestore.AmazonFileStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,12 +17,12 @@ public class ProfileService {
 
 
     private final ProfileRepository profileRepository;
-    private final FileStore fileStore;
+    private final AmazonFileStore amazonFileStore;
 
     @Autowired
-    public ProfileService(ProfileRepository profileRepository, FileStore fileStore) {
+    public ProfileService(ProfileRepository profileRepository, AmazonFileStore amazonFileStore) {
         this.profileRepository = profileRepository;
-        this.fileStore = fileStore;
+        this.amazonFileStore = amazonFileStore;
     }
 
 //    List<Profile> getProfiles() {
@@ -31,6 +31,10 @@ public class ProfileService {
 
     public List<Profile> findAll() {
         return profileRepository.findAll();
+    }
+
+    public Profile getById(UUID id){
+        return profileRepository.getById(id);
     }
 
     public void save(Profile profile){
@@ -57,7 +61,7 @@ public class ProfileService {
         String filename = String.format("%s-%s", file.getOriginalFilename(), UUID.randomUUID());
 
         try {
-            fileStore.save(path, filename, file.getInputStream(),Optional.of(metadata));
+            amazonFileStore.save(path, filename, file.getInputStream(),Optional.of(metadata));
             profile.setProfileAvatar(filename);
             save(profile);
 
@@ -100,7 +104,7 @@ public class ProfileService {
 
 
         return user.getProfileAvatar()
-                .map(key -> fileStore.download(path, key))
+                .map(key -> amazonFileStore.download(path, key))
                 .orElse(new byte[0]);
     }
 }
