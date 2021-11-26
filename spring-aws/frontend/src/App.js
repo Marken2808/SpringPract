@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import MyRoute from './routes/MyRoute';
 
 function App() {

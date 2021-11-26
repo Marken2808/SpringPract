@@ -19,10 +19,20 @@ export const category = {
 
 const filterApi = {
 
-    getProfilesList: (type, params) => {
-        const url = 'profile/';
+    getProfilesList: (cate, params) => {
+        const url = category[cate] ;
         return axiosClient.get(url, params);
     },
+
+    detail: (cate, id, params) => {
+        const url = category[cate] + '/' + id;
+        return axiosClient.get(url, params);
+    },
+
+    download: (cate, id, params) => {
+        const url = category[cate] + '/' + id +'/image/download';
+        return axiosClient.get(url, params);
+    }
 }
 
 export default filterApi;

@@ -1,4 +1,4 @@
-function WelcomeView() {
+const WelcomeView = () => {
     return (
         <div className="App">
             <h1>Welcome to FC.Barcelona</h1>
