@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 
 import filterApi from '../apis/filter';
 import PlayerCard from '../components/PlayerCard';
-import { Link } from "react-router-dom";
+
 
 const Profiles = () => {
 
@@ -21,15 +21,9 @@ const Profiles = () => {
 
 
     return profiles.map((player, index) => {
-        const link = '/' + category + '/' + player.profileId;
-        
         return (
             <div key={index} className="App">
-
-                <Link to={link} >
-                    <PlayerCard player={player} category={category} key={index}/>
-                </Link>
-
+                <PlayerCard player={player} category={category} key={index}/>
             </div>
         )
     })

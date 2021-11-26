@@ -1,6 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
+import { Link } from "react-router-dom";
+import filterApi from '../apis/filter';
 
 const PlayerCard = props => {
 
@@ -8,22 +10,29 @@ const PlayerCard = props => {
     const player = props.player;
     const category = props.category;
 
-    const url = 'http://localhost:8080/api/v1/profile/'+player.profileId+'/image/download';
+    const [url, setUrl] = useState([])
+
+    const link = '/' + category + '/' + player.profileId;
+
+    useEffect(() => {
+        const getUrl = async () => {
+            const response = await filterApi.download(category, player.profileId, { params: {} });
+            setUrl(response);
+        }
+        getUrl();
+    })
 
     return (
-        <>
-            {
-                <div>
-                    <img className="image"
-                        src={url} alt="" />
-                    <br />
-                    <Dropzone player={player} />
-                    <h1>{player.profileName}</h1>
-                    <p>{player.profileId}</p>
-                </div>
-            }
-        </>
-
+        <div>
+            <Link to={link} >
+                <img className="image"
+                    src={url} alt="" />
+            </Link>
+            <br />
+            <Dropzone player={player} />
+            <h1>{player.profileName}</h1>
+            {/* <p>{player.profileId}</p> */}
+        </div>
     );
 
 }
