@@ -1,40 +1,36 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import { useDropzone } from 'react-dropzone';
+import filterApi from '../../apis/filter';
 
 const Profiles = () => {
 
-    const [Profiles, setProfiles] = useState([]);
+    const { category } = useParams();
+    console.log(category);
 
-    const fetchProfiles = () => {
-        axios.get("http://localhost:8080/api/v1/profile").then(res => {
-            console.log(res);
-            setProfiles(res.data)
-        });
-    }
+    const [profiles, setProfiles] = useState([]);
+
 
     useEffect(() => {
-        fetchProfiles();
-    }, []);
+        const getProfiles = async () => {
+            const response = await filterApi.getProfilesList(category, { params: {} });
+            setProfiles(response);
+        }
+        getProfiles();
+    }, [category]);
 
     
-    return Profiles.map((profile, index) => {
+    return profiles.map((profile, index) => {
         return (
             <div key={index}>
                 {profile.profileId ? (
-                // <Link
-                //     to={`./${profile.profileId}`}
-                //     props={`${profile.profileId}`}
-                // >
-                // <Link
-                //     to={{pathName: `./${profile.profileId}`,
-                //         state: {
-                //             fromNotifications: true
-                //         }}}
-                // >
+                <Link
+                    to={`/profile/${profile.profileId}`}
+                >
                     <img className="image" src={`http://localhost:8080/api/v1/profile/${profile.profileId}/image/download`} />
-                // </Link>
+                </Link>
                 
                 ) : null}
                 <br />

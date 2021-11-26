@@ -1,54 +1,37 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
+import { useParams } from 'react-router';
 import { useDropzone } from 'react-dropzone';
-
-// class ProfilePlayer extends React.component{
-//     componentDidMount() {
-//         const {id} = this.props.match.params;
-//         const {fromNotifications} = this.props.location.state;
-//     }
-
-//     render(){
-//         return (
-//         <div>
-//             <h1>
-//             alo {id}
-//             </h1>
-//         </div>
-//     );
-//     }
-// }
 
 const ProfilePlayerView = () => {
 
-    // const location = useLocation();
-    // var id = location.state.profile;
+    const { category, id } = useParams();
 
-    const {id} = this.props.match.params;
-    // console.log(id);
+    console.log(category);
 
-    const [ProfilePlayer, setProfile] = useState([]);
+    const [player, setPlayer] = useState(null);
 
-    const fetchProfile = () => {
-        axios.get(`http://localhost:8080/api/v1/profile/${id}`)
-            .then(res => {
-                console.log(res);
-                setProfile(res.data)
-        });
-    }
+    
 
     useEffect(() => {
-        fetchProfile();
-    }, []);
+        const getPlayer = async () => {
+            await axios.get('http://localhost:8080/api/v1/profile/' + id)
+                .then(res => {
+                    console.log(res);
+                    setPlayer(res.data)
+            });
+        }
+        getPlayer();
+    }, [id]);
 
-    // return (
-    //     <div>
-    //         <h1>
-    //         alo {id}
-    //         </h1>
-    //     </div>
-    // );
+    return (
+        <div>
+            <h1>
+            alo {id}
+            </h1>
+        </div>
+    );
   
 }
 
