@@ -1,4 +1,4 @@
-package com.tolo.springaws.config;
+package com.tolo.springaws.service.config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

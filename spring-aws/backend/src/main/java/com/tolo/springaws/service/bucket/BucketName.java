@@ -1,7 +1,7 @@
-package com.tolo.springaws.bucket;
+package com.tolo.springaws.service.bucket;
 
 public enum BucketName {
-    PROFILE("spring-aws-1711");
+    FOOTBALL("spring-aws-1711");
 
     private final String bucketName;
 

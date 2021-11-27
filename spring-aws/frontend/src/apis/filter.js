@@ -2,7 +2,7 @@ import axiosClient from "./axios";
 import configApi from './config';
 
 export const category = {
-    profile: 'profile',
+    players: 'players',
     club: 'club',
 }
 

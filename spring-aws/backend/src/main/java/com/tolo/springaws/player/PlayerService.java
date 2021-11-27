@@ -1,7 +1,7 @@
-package com.tolo.springaws.profile;
+package com.tolo.springaws.player;
 
-import com.tolo.springaws.bucket.BucketName;
-import com.tolo.springaws.filestore.AmazonFileStore;
+import com.tolo.springaws.service.bucket.BucketName;
+import com.tolo.springaws.service.filestore.AmazonFileStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,36 +13,32 @@ import static org.apache.http.entity.ContentType.*;
 
 
 @Service
-public class ProfileService {
+public class PlayerService {
 
 
-    private final ProfileRepository profileRepository;
+    private final PlayerRepository playerRepository;
     private final AmazonFileStore amazonFileStore;
 
     @Autowired
-    public ProfileService(ProfileRepository profileRepository, AmazonFileStore amazonFileStore) {
-        this.profileRepository = profileRepository;
+    public PlayerService(PlayerRepository playerRepository, AmazonFileStore amazonFileStore) {
+        this.playerRepository = playerRepository;
         this.amazonFileStore = amazonFileStore;
     }
 
-//    List<Profile> getProfiles() {
-//        return profileRepository.getProfiles();
-//    }
-
-    public List<Profile> findAll() {
-        return profileRepository.findAll();
+    public List<Player> findAll() {
+        return playerRepository.findAll();
     }
 
-    public Profile getById(UUID id){
-        return profileRepository.getById(id);
+    public Player getById(UUID id){
+        return playerRepository.getById(id);
     }
 
-    public void save(Profile profile){
-        profileRepository.save(profile);
+    public void save(Player player){
+        playerRepository.save(player);
     }
 
 
-    public void uploadImage(UUID profileId, MultipartFile file) {
+    public void uploadImage(UUID playerId, MultipartFile file) {
         // Check if empty
         extracted(file);
 
@@ -50,20 +46,20 @@ public class ProfileService {
         extracted1(file);
 
         // User exists in DB
-        Profile profile = getProfileOrThrow(profileId);
+        Player player = getPlayerOrThrow(playerId);
         // grab metadata from file if any
         Map<String, String> metadata = new HashMap<>();
         metadata.put("Content-type", file.getContentType());
         metadata.put("Content-length", String.valueOf(file.getSize()));
 
         // Store in AWS s3, update database with s3 link
-        String path = String.format("%s/%s", BucketName.PROFILE.getBucketName(), profile.getProfileId());
+        String path = String.format("%s/%s", BucketName.FOOTBALL.getBucketName(), player.getPlayerId());
         String filename = String.format("%s-%s", file.getOriginalFilename(), UUID.randomUUID());
 
         try {
             amazonFileStore.save(path, filename, file.getInputStream(),Optional.of(metadata));
-            profile.setProfileAvatar(filename);
-            save(profile);
+            player.setPlayerAvatar(filename);
+            save(player);
 
 
         } catch (IOException e) {
@@ -87,23 +83,23 @@ public class ProfileService {
         }
     }
 
-    private Profile getProfileOrThrow(UUID profileId) {
+    private Player getPlayerOrThrow(UUID playerId) {
         return findAll()
                 .stream()
-                .filter(profile -> profile.getProfileId().equals(profileId))
+                .filter(player -> player.getPlayerId().equals(playerId))
                 .findFirst()
-                .orElseThrow(() -> new IllegalStateException(String.format("User profile $s not found", profileId)));
+                .orElseThrow(() -> new IllegalStateException(String.format("User player $s not found", playerId)));
     }
 
-    public byte[] downloadImage(UUID userProfileId) {
+    public byte[] downloadImage(UUID playerId) {
 
-        Profile user = getProfileOrThrow(userProfileId);
+        Player user = getPlayerOrThrow(playerId);
         String path = String.format("%s/%s",
-                BucketName.PROFILE.getBucketName(),
-                user.getProfileId());
+                BucketName.FOOTBALL.getBucketName(),
+                user.getPlayerId());
 
 
-        return user.getProfileAvatar()
+        return user.getPlayerAvatar()
                 .map(key -> amazonFileStore.download(path, key))
                 .orElse(new byte[0]);
     }

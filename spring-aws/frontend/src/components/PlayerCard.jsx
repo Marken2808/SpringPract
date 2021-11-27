@@ -12,11 +12,11 @@ const PlayerCard = props => {
 
     const [url, setUrl] = useState([])
 
-    const link = '/' + category + '/' + player.profileId;
+    const link = '/' + category + '/' + player.playerId;
 
     useEffect(() => {
         const getUrl = async () => {
-            const response = await filterApi.download(category, player.profileId, { params: {} });
+            const response = await filterApi.download(category, player.playerId, { params: {} });
             setUrl(response);
         }
         getUrl();
@@ -30,8 +30,8 @@ const PlayerCard = props => {
             </Link>
             <br />
             <Dropzone player={player} />
-            <h1>{player.profileName}</h1>
-            {/* <p>{player.profileId}</p> */}
+            <h1>{player.playerName}</h1>
+            {/* <p>{player.playerId}</p> */}
         </div>
     );
 
@@ -47,7 +47,7 @@ const Dropzone = props => {
         const formData = new FormData();
 
         formData.append("file", file);
-        axios.post(`http://localhost:8080/api/v1/profile/${player.profileId}/image/upload`,
+        axios.post(`http://localhost:8080/api/v1/players/${player.playerId}/image/upload`,
             formData,
             {
                 headers: {
