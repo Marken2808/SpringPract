@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29d22f8b-0cdf-4f66-8f0c-ff09b38b54b1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/player/PlayerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/player/PlayerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/bucket/BucketName.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/service/bucket/BucketName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/config/AmazonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/service/config/AmazonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/datastore/FakeUserProfileDataStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/filestore/FileStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/service/filestore/AmazonFileStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/profile/UserProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/profile/UserProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/profile/UserProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/profile/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/tolo/springaws/player/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tuanbookstore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../tuanbookstore/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+  </component>
+  <component name="ProjectId" id="24CesFwRz0LCyKxlfEyUQTa2KA3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29d22f8b-0cdf-4f66-8f0c-ff09b38b54b1" name="Default Changelist" comment="" />
+      <created>1643139200967</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643139200967</updated>
+      <workItem from="1643139203097" duration="23000" />
+      <workItem from="1643729288777" duration="151000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
